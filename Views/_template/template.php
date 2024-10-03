@@ -2,16 +2,9 @@
 
 $template = new Template();
 
-
     class Template{
 
         public function __construct(){
-
-
-
-     
-
-
 
 ?>
 
@@ -48,7 +41,7 @@ $template = new Template();
 
 
 <?php 
- } // cierra   public function __destruct()
+        } // cierra   public function __destruct()
 
 } //cierra la class
 ?>
