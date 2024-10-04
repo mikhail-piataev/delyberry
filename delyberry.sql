@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS delyberry;
 
 CREATE DATABASE delyberry;
 
-CREATE TABLE productos (
+CREATE TABLE delyberry.productos (
   id_producto INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(100) NOT NULL,
   precio FLOAT,
@@ -10,14 +10,14 @@ CREATE TABLE productos (
   imagen VARCHAR(200)
 );
 
-CREATE TABLE carritos (
+CREATE TABLE delyberry.carritos (
   id_carrito INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   id_producto_fk INT(11),
   id_pedido_fk INT(11),
   cantidad INT(11)
 );
 
-CREATE TABLE pedidos (
+CREATE TABLE delyberry.pedidos (
   id_pedido INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   id_cliente_fk INT(11),
   id_repartidor_fk INT(11),
@@ -28,14 +28,14 @@ CREATE TABLE pedidos (
   id_pago_fk INT(11)
 );
 
-CREATE TABLE pagos (
+CREATE TABLE delyberry.pagos (
   id_pago INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   monto DECIMAL,
   metodo_pago ENUM('tarjeta', 'mercado_pago', 'efectivo'),
   estado ENUM('solicitado','listo')
 );
 
-CREATE TABLE usuarios (
+CREATE TABLE delyberry.usuarios (
   id_usuario INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   login VARCHAR(50),
   password VARCHAR(50),
@@ -45,7 +45,7 @@ CREATE TABLE usuarios (
   apellido VARCHAR(50)
 );
 
-CREATE TABLE direcciones (
+CREATE TABLE delyberry.direcciones (
   id_direccion INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   barrio VARCHAR(50),
   calle VARCHAR(50),
@@ -54,13 +54,13 @@ CREATE TABLE direcciones (
   departamento VARCHAR(50)
 );
 
-CREATE TABLE clientes_direcciones (
+CREATE TABLE delyberry.clientes_direcciones (
   id_cd INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   id_cliente_fk INT(11),
   id_direccion_fk INT(11)
 );
 
-INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `descripcion`, `imagen`) VALUES
+INSERT INTO delyberry.productos (`id_producto`, `nombre`, `precio`, `descripcion`, `imagen`) VALUES
 (1, 'Arepa Venezolana', 2000.00, 'Es el plato mas comido de Venzuela', 'arepa.jpg'),
 (2, 'Cachapa Venezolana', 1500.50, 'Con malta sabe mejor!', 'cachapa.jpg'),
 (3, 'Sopa Venezolana', 2000.99, 'Con carne o cangrejo', 'sopa.jpg'),
