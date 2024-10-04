@@ -5,7 +5,7 @@
     define('ROOT', realpath(dirname(__FILE__)) . DS);
 
     //definimos el directorio
-    define('URL', "http://localhost/proyecto");
+    define('URL', "http://localhost/delyberry");
 
     //requerimos configuracion!!!!! archivo Autoload.php
     require_once "Config/Autoload.php";

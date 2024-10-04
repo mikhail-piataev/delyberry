@@ -1,4 +1,5 @@
 <?php
+echo "Hello";
 session_start();
 $servername = "localhost";
 $nombre = "tu_usuario"; 
@@ -43,22 +44,3 @@ $stmt->close();
 
 $conn->close();
 ?>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Login</title>
-</head>
-<body>
-<form method="POST">
-    <label for="username">Usuario:</label>
-    <input type="text" name="usuario" required>
-    <br>
-    <label for="password">Contraseña:</label>
-    <input type="password" name="contraseña" required>
-    <br>
-    <button type="submit">Iniciar Sesión</button>
-</form>
-</body>
-</html>
