@@ -61,7 +61,7 @@ CREATE TABLE clientes_direcciones (
 );
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `descripcion`, `imagen`) VALUES
-(1, 'Arepa Venezolana', 1000.00, 'Es el plato mas comido de Venzuela', 'arepa.jpg'),
+(1, 'Arepa Venezolana', 2000.00, 'Es el plato mas comido de Venzuela', 'arepa.jpg'),
 (2, 'Cachapa Venezolana', 1500.50, 'Con malta sabe mejor!', 'cachapa.jpg'),
 (3, 'Sopa Venezolana', 2000.99, 'Con carne o cangrejo', 'sopa.jpg'),
 (4, 'Pan de jamon', 25000.00, 'Para navidad', 'pan.jpg'),
