@@ -5,7 +5,7 @@ CREATE DATABASE delyberry;
 CREATE TABLE productos (
   id_producto INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(100) NOT NULL,
-  precio DECIMAL,
+  precio FLOAT,
   descripcion TEXT,
   imagen VARCHAR(200)
 );
@@ -61,13 +61,13 @@ CREATE TABLE clientes_direcciones (
 );
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `precio`, `descripcion`, `imagen`) VALUES
-(1, 'Arepa Venezolana', 1000.00, 'Es el plato mas comido de Venzuela', 'img/arepa.jpg'),
-(2, 'Cachapa Venezolana', 1500.50, 'Con malta sabe mejor!', 'img/cachapa.jpg'),
-(3, 'Sopa Venezolana', 2000.99, 'Con carne o cangrejo', 'img/sopa.jpg'),
-(4, 'Pan de jamon', 25000.00, 'Para navidad', 'img/pan.jpg'),
-(5, 'Pizza', 300.75, 'Pizza con mucho queso!', 'img/pizza.jpg'),
-(6, 'Coca Cola', 350.10, 'Bebida refrescante!', 'img/coca.jpg'),
-(7, 'Chinotto', 400.99, 'Bebida Venezolana', 'img/chinotto.jpg'),
-(8, 'Malta', 450.49, 'De Maltin Polar!', 'img/malta.jpg'),
-(9, 'Cerveza Polar', 500.00, 'Se toma con cachapas', 'img/polar.jpg'),
-(10, 'Agua', 550.89, 'Agua mineral', 'img/agua.jpg');
+(1, 'Arepa Venezolana', 1000.00, 'Es el plato mas comido de Venzuela', 'arepa.jpg'),
+(2, 'Cachapa Venezolana', 1500.50, 'Con malta sabe mejor!', 'cachapa.jpg'),
+(3, 'Sopa Venezolana', 2000.99, 'Con carne o cangrejo', 'sopa.jpg'),
+(4, 'Pan de jamon', 25000.00, 'Para navidad', 'pan.jpg'),
+(5, 'Pizza', 300.75, 'Pizza con mucho queso!', 'pizza.jpg'),
+(6, 'Coca Cola', 350.10, 'Bebida refrescante!', 'coca.jpg'),
+(7, 'Chinotto', 400.99, 'Bebida Venezolana', 'chinotto.jpg'),
+(8, 'Malta', 450.49, 'De Maltin Polar!', 'malta.jpg'),
+(9, 'Cerveza Polar', 500.00, 'Se toma con cachapas', 'polar.jpg'),
+(10, 'Agua', 550.89, 'Agua mineral', 'agua.jpg');

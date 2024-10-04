@@ -1,10 +1,15 @@
 <?php namespace Views;
 
+use Models\Producto as Producto;
+
 $template = new Template();
 
     class Template{
-
+        
         public function __construct(){
+            
+            $producto = new Producto;
+
 
 ?>
 
@@ -19,11 +24,29 @@ $template = new Template();
     <link rel="stylesheet" href="<?php echo URL;?>Views/css/general.css  "  >
 </head>
 <body>
-    <h1>Aca esta la pagina de inicio</h1>
+    <h1>Nuestros productos</h1>
 
 
-
-    <?php  
+    <?php 
+        $data=$producto->listar();
+        $currentDir = dirname(__FILE__); 
+        if ($data!=NULL) {
+          while($filas = mysqli_fetch_array($data)){
+            $path = ROOT."Views".DS."_template".DS."imagenes".DS."productos".DS.$filas['imagen'];
+            print_r($path); 
+            echo "
+              <section class='product-card'>
+                <img src='".$path." ' alt='".$filas['nombre']."' class='product-image'>
+                <div class='product-info'>
+                  <h3 class='product-name'>".$filas['nombre']."</h3>
+                  <p class='product-price'>".$filas['precio']."</p>
+                  <p class='product-description'>".$filas['descripcion']."</p>
+                </div>
+              </section>
+            ";
+          }
+        }
+ 
        } //cierra   public function __construct
 
        public function __destruct(){
