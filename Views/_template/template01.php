@@ -42,7 +42,7 @@ $template = new Template();
         if ($data!=NULL) {
           while($filas = mysqli_fetch_array($data)){
             //$path = ROOT."Views".DS."_template".DS."imagenes".DS."productos".DS.$filas['imagen']; 
-            $path = "Views/_template/imagenes/productos/".$filas['imagen'];          
+            $path = "imagenes/productos/".$filas['imagen'];          
             //  print_r($path); 
             echo "
               <section class='product-card' >
