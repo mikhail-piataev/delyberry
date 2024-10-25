@@ -70,7 +70,7 @@
           return $datos;
         }
 
-        //eliminar estudiante
+        //eliminar producto
         public function eliminar($id){
           $this->producto->set("id",$id);
           $this->producto->delete();
