@@ -1,63 +1,62 @@
 <?php namespace Models;
 
-    class Producto{
+	class Producto{
 
-        //creamos variables pribadas para los datos de la base de datos
+		//creamos las variables para guardar los valores de la base de datos
+		private $id;
+		private $nombre;
+		private $precio;
+		private $descripcion;
+		private $imagen;
+	
+		//creamos una variable para la conexión		
+		private $con;
 
-        private $id;
-        private $nombre;
-        private $precio;
-        private $descripcion;
-        private $imagen;
+		public function __construct(){
+			$this->con = new Conexion();
+		}
 
-        //usamos la conexión
-        private $con;
+		public function set($atributo, $contenido){
+			$this->$atributo = $contenido;
+		}
 
-        public function __construct(){
-            $this->con = new Conexion();
-        }
+		public function get($atributo){
+			return $this->$atributo;
+		}
 
-        //funciones de seteo y de optención (set y get)
-        public function set($atributo, $contenido){
-            $this->$atributo = $contenido;
-        }
+		public function listar(){
+			$sql = "SELECT * FROM productos";
+			$datos = $this->con->consultaRetorno($sql);
+			return $datos;
+		}
 
-        public function get($atributo){
-            return $this->$atributo;
-        }
+		public function add(){
+			$sql = "INSERT INTO productos (id, nombre, precio, descripcion, imagen)
+					VALUES (null, '{$this->nombre}', '{$this->precio}', '{$this->descripcion}', '{$this->imagen}')";
+			$this->con->consultaSimple($sql);
+		}
 
-        //consultas a la base de datos
-        //listado
-        public function listar(){
-            $sql = "SELECT * FROM productos";
-            $datos = $this->con->consultaRetorno($sql);
-            return $datos;
-        }
+		public function delete(){
+			$sql = "DELETE FROM productos WHERE id = '{$this->id}'";
+			$this->con->consultaSimple($sql);
+		}
 
-        //agregar
-        public function add(){
-            $sql = "INSERT INTO productos(id, nombre, precio, descripcion, imagen) VALUE (null, '{$this->nombre}', '{$this->precio}', '{$this->descripcion}', '{$this->imagen}')";
-            $this->con->consultaSimple($sql);
-        }
+		public function edit(){
+			$sql = "UPDATE productos SET 
+				nombre = '{$this->nombre}', 
+				precio = '{$this->precio}', 
+				descripcion = '{$this->descripcion}', 
+				imagen = '{$this->imagen}' 
+				WHERE id = '{$this->id}'";
+			$this->con->consultaSimple($sql);
+		}
 
-        //eliminar
-        public function delete(){
-            $sql = "DELETE FROM productos WHERE id='{$this->id}'";
-            $this->con->consultaSimple($sql);
-        }
+		public function view(){
+			$sql = "SELECT * FROM productos WHERE id = '{$this->id}'";
+			$datos = $this->con->consultaRetorno($sql);
+			$row = mysqli_fetch_assoc($datos);
+			return $row;
+		}
 
-        //editar
-        public function edit(){
-            $sql = "UPDATE productos SET nombre ='{$this->nombre}', precio='{$this->precio}', descripcion = '{$this->descripcion}', WHERE id = '{$this->id}'";
-            $this->con->consultaSimple($sql);
-        }
-
-        //consulta para cargar la "vista" por defecto
-        public function view(){
-            $sql = "SELECT * FROM productos";
-            $datos = $this->con->consultaRetorno($sql);
-            $row = mysqli_fetch_assoc($datos);
-            return $row;
-        }
-    }
+	}
 ?>

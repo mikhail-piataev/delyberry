@@ -14,20 +14,12 @@
 				        <input class="form-control" name="nombre" type="text" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Edad</label>
-				        <input class="form-control" name="edad" type="number" required>
+				      <label for="inputEmail" class="control-label">Precio</label>
+				        <input class="form-control" name="precio" type="number" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Promedio</label>
-				        <input class="form-control" name="promedio" type="number" required>
-				    </div>
-				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Sección</label>
-				      <select name="id_seccion" class="form-control">
-				      	<?php while($row = mysqli_fetch_array($datos)){ ?>
-				      		<option value="<?php echo $row['id']; ?>"><?php echo $row['nombre']; ?></option>
-				      	<?php } ?>
-				      </select>
+				      <label for="inputEmail" class="control-label">Descripcion</label>
+				        <input class="form-control" name="descripcion" type="text" required>
 				    </div>
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Imagen</label>

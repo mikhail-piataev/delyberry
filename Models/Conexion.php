@@ -1,31 +1,30 @@
 <?php namespace Models;
 
-    class Conexion{
+	class Conexion{
 
-        private $datos = array(
-            "host" => "localhost", //0
-            "user" => "root", //1
-            "pass" => "", //2
-            "db" => "delyberry" //3
-        );
+		private $datos = array(
+			"host" => "localhost",
+			"user" => "root",
+			"pass" => "",
+			"db" => "delyberry"
+		);
+		
+		private $con;
 
-        private $con;
+		public function __construct(){
+			$this->con = new \mysqli($this->datos['host'], 
+				$this->datos['user'], $this->datos['pass'],
+				$this->datos['db']);
+		}
 
-        public function __construct(){
-            //cual es el host al que hay que conectar
-            $this->con = new \mysqli($this->datos['host'], $this->datos['user'], $this->datos['pass'], $this->datos['db']); 
-        }
+		public function consultaSimple($sql){
+			$this->con->query($sql);
+		}
 
-        //como voy a hacer las consultas a la base de datos
-        public function consultaSimple($sql){
-            $this->con->query($sql);
-        }
+		public function consultaRetorno($sql){
+			$datos = $this->con->query($sql);
+			return $datos;
+		}
+	}
 
-        //retorno de la consulta sql
-        public function consultaRetorno($sql){
-            $datos = $this->con->query($sql);
-            return $datos;
-        }
-
-    }
 ?>

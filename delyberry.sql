@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS delyberry;
 CREATE DATABASE delyberry;
 
 CREATE TABLE delyberry.productos (
-  id_producto INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(100) NOT NULL,
   precio FLOAT,
   descripcion TEXT,
@@ -60,7 +60,7 @@ CREATE TABLE delyberry.clientes_direcciones (
   id_direccion_fk INT(11)
 );
 
-INSERT INTO delyberry.productos (`id_producto`, `nombre`, `precio`, `descripcion`, `imagen`) VALUES
+INSERT INTO delyberry.productos (`id`, `nombre`, `precio`, `descripcion`, `imagen`) VALUES
 (1, 'Arepa Venezolana', 2000.00, 'Es el plato mas comido de Venzuela', 'arepa.jpg'),
 (2, 'Cachapa Venezolana', 1500.50, 'Con malta sabe mejor!', 'cachapa.jpg'),
 (3, 'Sopa Venezolana', 2000.99, 'Con carne o cangrejo', 'sopa.jpg'),
