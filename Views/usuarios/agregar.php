@@ -14,13 +14,30 @@
 				        <input class="form-control" name="id_usuario" type="number" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Precio</label>
-				        <input class="form-control" name="precio" type="number" required>
+				      <label for="Login" class="control-label">Login</label>
+				        <input class="form-control" name="Login" type="text" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Descripcion</label>
-				        <input class="form-control" name="descripcion" type="text" required>
+				      <label for="Contraseña" class="control-label">Contraseña</label>
+				        <input class="form-control" name="Contraseña" type="number" required>
 				    </div>
+					<div class="form-group">
+				      <label for="Email" class="control-label">Email</label>
+				        <input class="form-control" name="Email" type="mail" required>
+				    </div>
+					<div class="form-group">
+				      <label for="Role_usuario" class="control-label">Role_usuario</label>
+				        <input class="form-control" name="Role_usuario" type="text" required>
+				    </div>
+					<div class="form-group">
+				      <label for="Nombre" class="control-label">Nombre</label>
+				        <input class="form-control" name="Nombre" type="text" required>
+				    </div>
+					<div class="form-group">
+				      <label for="Apellido" class="control-label">Apellido</label>
+				        <input class="form-control" name="Apellido" type="text" required>
+				    </div>
+
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Imagen</label>
 				        <input class="form-control" name="imagen" id="imagen" type="file" required>
