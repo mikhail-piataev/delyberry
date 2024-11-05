@@ -21,7 +21,7 @@
 		}
 
 		public function agregar(){
-			if(!$_POST){
+			if($_POST){
 				$permitidos = array("image/jpeg", "image/png", "image/gif", "image/jpg");
 				$limite = 700;
 				if(in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite * 1024){
