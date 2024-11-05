@@ -4,7 +4,7 @@
 	define('ROOT', realpath(dirname(__FILE__)) . DS);
 	
 	//dentro de nuestro localhost especificamos la carpeta raiz de nuesto sitio
-	define('URL', "http://localhost/delyberry2/");
+	define('URL', "http://localhost/delyberry/");
 
 	require_once "Config/Autoload.php";
 	Config\Autoload::run();
