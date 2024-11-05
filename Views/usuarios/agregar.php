@@ -14,28 +14,28 @@
 				        <input class="form-control" name="id_usuario" type="number" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="Login" class="control-label">Login</label>
-				        <input class="form-control" name="Login" type="text" required>
+				      <label for="login" class="control-label">Login</label>
+				        <input class="form-control" name="login" type="text" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="Contraseña" class="control-label">Contraseña</label>
-				        <input class="form-control" name="Contraseña" type="number" required>
+				      <label for="password" class="control-label">Contraseña</label>
+				        <input class="form-control" name="password" type="number" required>
 				    </div>
 					<div class="form-group">
-				      <label for="Email" class="control-label">Email</label>
-				        <input class="form-control" name="Email" type="mail" required>
+				      <label for="email" class="control-label">Email</label>
+				        <input class="form-control" name="email" type="mail" required>
 				    </div>
 					<div class="form-group">
-				      <label for="Role_usuario" class="control-label">Role_usuario</label>
-				        <input class="form-control" name="Role_usuario" type="text" required>
+				      <label for="role_usuario" class="control-label">Role_usuario</label>
+				        <input class="form-control" name="role_usuario" type="text" required>
 				    </div>
 					<div class="form-group">
-				      <label for="Nombre" class="control-label">Nombre</label>
-				        <input class="form-control" name="Nombre" type="text" required>
+				      <label for="nombre" class="control-label">Nombre</label>
+				        <input class="form-control" name="nombre" type="text" required>
 				    </div>
 					<div class="form-group">
-				      <label for="Apellido" class="control-label">Apellido</label>
-				        <input class="form-control" name="Apellido" type="text" required>
+				      <label for="apellido" class="control-label">Apellido</label>
+				        <input class="form-control" name="apellido" type="text" required>
 				    </div>
 
 				    <div class="form-group">
