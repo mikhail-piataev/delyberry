@@ -1,22 +1,22 @@
 <?php namespace Controllers;
 	
-	
-	use Models\Usuario as Usuario;
+	//usamos los modelos de las Clases producto  
+	use Models\Producto as Producto;
 
 	
 	
-	class usuariosController{
+	class productosController{
 
-		private $usuario;
+		private $producto;
 
 
 		public function __construct(){
-			$this->usuario = new Usuario();
+			$this->producto = new Producto();
 
 		}
 
 		public function index(){
-			$datos = $this->usuario->listar();
+			$datos = $this->producto->listar();
 			return $datos;
 		}
 
@@ -26,56 +26,53 @@
 				$limite = 700;
 				if(in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite * 1024){
 					$nombre = date('is') . $_FILES['imagen']['name'];
-					$ruta = "Views" . DS . "_template". DS . "imagenes" . DS . "usuarios" . DS . $nombre;
+					$ruta = "Views" . DS . "_template". DS . "imagenes" . DS . "productos" . DS . $nombre;
 					move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
-					$this->usuario->set("id_usuario", $_POST['id_usuario']);
-					$this->usuario->set("login", $_POST['login']);
-					$this->usuario->set("password", $_POST['password']);
-                    $this->usuario->set("imagen", $nombre);
-					$this->usuario->add();
-					header("Location: " . URL . "usuarios");
+					$this->producto->set("nombre", $_POST['nombre']);
+					$this->producto->set("precio", $_POST['precio']);
+					$this->producto->set("descripcion", $_POST['descripcion']);
+					$this->producto->set("imagen", $nombre);
+					$this->producto->add();
+					header("Location: " . URL . "productos");
 				}
 			}
 		}
 
 		public function editar($id){
 			if(!$_POST){
-				$this->usuario->set("id", $id);
-				$datos = $this->usuario->view();
+				$this->producto->set("id", $id);
+				$datos = $this->producto->view();
 				return $datos;
 			}else{
 				$permitidos = array("image/jpeg", "image/png", "image/gif", "image/jpg");
 				$limite = 700;
 				if(in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite * 1024){
 					$nombre = date('is') . $_FILES['imagen']['name'];
-					$ruta = "Views" . DS . "_template". DS . "imagenes" . DS . "usuarios" . DS . $nombre;
+					$ruta = "Views" . DS . "_template". DS . "imagenes" . DS . "productos" . DS . $nombre;
 					move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
-					$this->usuario->set("id_usuario", $_POST['id_usuario']);
-					$this->usuario->set("login", $_POST['login']);
-					$this->usuario->set("password", $_POST['password']);
-					$this->usuario->set("email", $_POST['email']);
-                    $this->usuario->set("role_usuario", $_POST['role_usuario']);
-                    $this->usuario->set("nombre", $_POST['nombre']);
-                    $this->usuario->set("apellido", $_POST['apellido']);
-					$this->usuario->set("imagen", $nombre);
-					$this->usuario->edit();
-					header("Location: " . URL . "usuarios");
+					$this->producto->set("id", $_POST['id']);
+					$this->producto->set("nombre", $_POST['nombre']);
+					$this->producto->set("precio", $_POST['precio']);
+					$this->producto->set("descripcion", $_POST['descripcion']);
+					$this->producto->set("imagen", $nombre);
+					$this->producto->edit();
+					header("Location: " . URL . "productos");
 				}
 			}
 		}
 
 		public function ver($id){
-			$this->usuario->set("id",$id);
-			$datos = $this->usuario->view();
+			$this->producto->set("id",$id);
+			$datos = $this->producto->view();
 			return $datos;
 		}
 
 		public function eliminar($id){
-			$this->usuario->set("id",$id);
-			$this->usuario->delete();
-			header("Location: " . URL . "usuarios");
+			$this->producto->set("id",$id);
+			$this->producto->delete();
+			header("Location: " . URL . "productos");
 		}
 }
-	$usuarios = new usuariosController();
+	$productos = new productosController();
 
 ?>
