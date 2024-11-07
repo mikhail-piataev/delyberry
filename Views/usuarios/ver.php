@@ -6,32 +6,25 @@
     </div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-3">
-          <img class="img-responsive" src="<?php echo URL;?>Views/_template/imagenes/usuarios/<?php echo $datos['imagen']; ?>">
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-12">
           <ul class="list-group">
             <li class="list-group-item">
-              <b>Nombre: </b><?php echo $datos['id_usuario']; ?>
+              <b>Id: </b><?php echo $datos['id_usuario']; ?>
             </li>
             <li class="list-group-item">
-              <b>Precio: </b><?php echo $datos['login']; ?>
+              <b>E-mail: </b><?php echo $datos['email']; ?>
             </li>
             <li class="list-group-item">
-              <b>Descripción: </b><?php echo $datos['password']; ?>
-            </li>
-            </li>
-            <li class="list-group-item">
-              <b>Descripción: </b><?php echo $datos['email']; ?>
+              <b>Password: </b><?php echo $datos['password']; ?>
             </li>
             <li class="list-group-item">
-              <b>Descripción: </b><?php echo $datos['role_usuario']; ?>
+              <b>Role: </b><?php echo $datos['role_usuario']; ?>
             </li>
             <li class="list-group-item">
-              <b>Descripción: </b><?php echo $datos['nombre']; ?>
+              <b>Nombre: </b><?php echo $datos['nombre']; ?>
             </li>
             <li class="list-group-item">
-              <b>Descripción: </b><?php echo $datos['apellido']; ?>
+              <b>Apellido: </b><?php echo $datos['apellido']; ?>
             </li>
           </ul>
         </div>

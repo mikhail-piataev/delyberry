@@ -8,32 +8,26 @@
 	    <table class="table table-striped table-hover ">
 		  <thead>
 		    <tr>
-		      <th>Id_usuario</th>
-		      <th>Login</th>
-		      <th>Password</th>
-			  <th>Email</th>
-		      <th>Role_usuario</th>
-			  <th>Nombre</th>
-			  <th>Apellido</th>
-			  <th>Imagen</th>
+		      <th>Id</th>
+		      <th>E-mail</th>
+		      <th>Role</th>
+			  	<th>Nombre</th>
+			  	<th>Apellido</th>
 		    </tr>
 		  </thead>
 		  <tbody>
 		  	<?php while($row = mysqli_fetch_array($datos)){ ?>
-		  	<tr>
-		  			<td><img class="imagen-avatar" src="<?php echo URL; ?>Views/_template/imagenes/usuarios/<?php echo $row['imagen']; ?>"></td>
-					<td><a href="<?php echo URL; ?>usuarios/ver/<?php echo $row['id']; ?>"><?php echo $row['id_usuario']; ?></a></td>
-			    	<td><?php echo $row['login']; ?></td>
-					<td><?php echo $row['password']; ?></td>
-			    	<td><?php echo $row['email']; ?></td>
-					<td><?php echo $row['role_usuario']; ?></td>
-					<td><?php echo $row['nombre']; ?></td>
-					<td><?php echo $row['apellido']; ?></td>
-			    	<td><a class="btn btn-warning" href="<?php echo URL; ?>usuarios/editar/<?php echo $row['id']; ?>">Editar</a>
-						<a class="btn btn-danger" href="<?php echo URL; ?>usuarios/eliminar/<?php echo $row['id']; ?>">Eliminar</a>
-			    	</td>
-			</tr>
-			<?php } ?>
+					<tr>
+							<td><?php echo $row['id_usuario']; ?></td>
+							<td><a href="<?php echo URL; ?>usuarios/ver/<?php echo $row['id_usuario']; ?>"><?php echo $row['email']; ?></a></td>
+							<td><?php echo $row['role_usuario']; ?></td>
+							<td><?php echo $row['nombre']; ?></td>
+							<td><?php echo $row['apellido']; ?></td>
+							<td><a class="btn btn-warning" href="<?php echo URL; ?>usuarios/editar/<?php echo $row['id_usuario']; ?>">Editar</a>
+									<a class="btn btn-danger" href="<?php echo URL; ?>usuarios/eliminar/<?php echo $row['id_usuario']; ?>">Eliminar</a>
+							</td>
+					</tr>
+				<?php } ?>
 		  </tbody>
 		</table> 
 	  </div>

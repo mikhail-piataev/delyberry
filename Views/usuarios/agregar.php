@@ -9,41 +9,28 @@
 	  		<div class="col-md-1"></div>
 	  		<div class="col-md-10">
 	  			<form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
-				    <div class="form-group">
-				      <label for="id_usuario" class="control-label">Id del usuario</label>
-				        <input class="form-control" name="id_usuario" type="number" required>
-				    </div>
-				    <div class="form-group">
-				      <label for="login" class="control-label">Login</label>
-				        <input class="form-control" name="login" type="text" required>
-				    </div>
-				    <div class="form-group">
-				      <label for="password" class="control-label">Contraseña</label>
-				        <input class="form-control" name="password" type="number" required>
-				    </div>
-					<div class="form-group">
-				      <label for="email" class="control-label">Email</label>
+						<div class="form-group">
+					      <label for="email" class="control-label">Email</label>
 				        <input class="form-control" name="email" type="mail" required>
+				    </div>  
+						<div class="form-group">
+					      <label for="password" class="control-label">Contraseña</label>
+				        <input class="form-control" name="password" type="password" required>
 				    </div>
-					<div class="form-group">
-				      <label for="role_usuario" class="control-label">Role_usuario</label>
+						<div class="form-group">
+					      <label for="role_usuario" class="control-label">Role_usuario</label>
 				        <input class="form-control" name="role_usuario" type="text" required>
 				    </div>
-					<div class="form-group">
-				      <label for="nombre" class="control-label">Nombre</label>
+						<div class="form-group">
+				    	  <label for="nombre" class="control-label">Nombre</label>
 				        <input class="form-control" name="nombre" type="text" required>
 				    </div>
-					<div class="form-group">
-				      <label for="apellido" class="control-label">Apellido</label>
+						<div class="form-group">
+				  	    <label for="apellido" class="control-label">Apellido</label>
 				        <input class="form-control" name="apellido" type="text" required>
 				    </div>
-
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Imagen</label>
-				        <input class="form-control" name="imagen" id="imagen" type="file" required>
-				    </div>
-				    <div class="form-group">
-				    	 <button type="submit" class="btn btn-success">Registrar</button>
+				    	  <button type="submit" class="btn btn-success">Registrar</button>
 				        <button type="reset" class="btn btn-warning">Borrar</button>
 				    </div>
 				</form>

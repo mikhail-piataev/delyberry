@@ -37,10 +37,9 @@ CREATE TABLE delyberry.pagos (
 
 CREATE TABLE delyberry.usuarios (
   id_usuario INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  login VARCHAR(50),
-  password VARCHAR(50),
   email VARCHAR(50),
-  role_usuario ENUM('admin','cliente','repartidor'),
+  password VARCHAR(50),
+  role_usuario VARCHAR(50), 
   nombre VARCHAR(50),
   apellido VARCHAR(50)
 );

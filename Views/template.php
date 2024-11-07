@@ -30,11 +30,18 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 		      <ul class="nav navbar-nav">
 		        <li><a href="<?php echo URL; ?>">Inicio</a></li>
-				<li class="dropdown">
+						<li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Productos <span class="caret"></span></a>
 		          <ul class="dropdown-menu" role="menu">
 		            <li><a href="<?php echo URL; ?>productos">Ver productos</a></li>
 		            <li><a href="<?php echo URL; ?>productos/agregar">Agregar producto</a></li>
+		          </ul>
+		        </li>
+						<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuarios <span class="caret"></span></a>
+		          <ul class="dropdown-menu" role="menu">
+		            <li><a href="<?php echo URL; ?>usuarios">Ver ususarios</a></li>
+		            <li><a href="<?php echo URL; ?>usuarios/agregar">Agregar usuario</a></li>
 		          </ul>
 		        </li>
 		      </ul>
