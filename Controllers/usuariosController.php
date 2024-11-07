@@ -1,22 +1,22 @@
 <?php namespace Controllers;
 	
 	//usamos los modelos de las Clases producto  
-	use Models\Producto as Producto;
+	use Models\Usuario as Usuario;
 
 	
 	
-	class productosController{
+	class usuariosController{
 
-		private $producto;
+		private $usuario;
 
 
 		public function __construct(){
-			$this->producto = new Producto();
+			$this->usuario = new Usuario();
 
 		}
 
 		public function index(){
-			$datos = $this->producto->listar();
+			$datos = $this->usuario->listar();
 			return $datos;
 		}
 
@@ -26,53 +26,59 @@
 				$limite = 700;
 				if(in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite * 1024){
 					$nombre = date('is') . $_FILES['imagen']['name'];
-					$ruta = "Views" . DS . "_template". DS . "imagenes" . DS . "productos" . DS . $nombre;
+					$ruta = "Views" . DS . "_template". DS . "imagenes" . DS . "usuarios" . DS . $nombre;
 					move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
-					$this->producto->set("nombre", $_POST['nombre']);
-					$this->producto->set("precio", $_POST['precio']);
-					$this->producto->set("descripcion", $_POST['descripcion']);
-					$this->producto->set("imagen", $nombre);
-					$this->producto->add();
-					header("Location: " . URL . "productos");
+					$this->usuario->set("login", $_POST['login']);
+					$this->usuario->set("password", $_POST['password']);
+					$this->usuario->set("email", $_POST['email']);
+                    $this->usuario->set("role_usuario", $_POST['role_usuario']);
+                    $this->usuario->set("nombre", $_POST['nombre']);
+                    $this->usuario->set("apellido", $_POST['apellido']);
+					$this->usuario->set("imagen", $nombre);
+					$this->usuario->add();
+					header("Location: " . URL . "usuarios");
 				}
 			}
 		}
 
-		public function editar($id){
+		public function editar($id_usuario){
 			if(!$_POST){
-				$this->producto->set("id", $id);
-				$datos = $this->producto->view();
+				$this->usuario->set("id_usuario", $id_usuario);
+				$datos = $this->usuario->view();
 				return $datos;
 			}else{
 				$permitidos = array("image/jpeg", "image/png", "image/gif", "image/jpg");
 				$limite = 700;
 				if(in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite * 1024){
 					$nombre = date('is') . $_FILES['imagen']['name'];
-					$ruta = "Views" . DS . "_template". DS . "imagenes" . DS . "productos" . DS . $nombre;
+					$ruta = "Views" . DS . "_template". DS . "imagenes" . DS . "usuarios" . DS . $nombre;
 					move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta);
-					$this->producto->set("id", $_POST['id']);
-					$this->producto->set("nombre", $_POST['nombre']);
-					$this->producto->set("precio", $_POST['precio']);
-					$this->producto->set("descripcion", $_POST['descripcion']);
-					$this->producto->set("imagen", $nombre);
-					$this->producto->edit();
-					header("Location: " . URL . "productos");
+					$this->usuario->set("id_usuario", $_POST['id_usuario']);
+					$this->usuario->set("login", $_POST['login']);
+					$this->usuario->set("password", $_POST['password']);
+					$this->usuario->set("email", $_POST['email']);
+                    $this->usuario->set("role_usuario", $_POST['role_usuario']);
+                    $this->usuario->set("nombre", $_POST['nombre']);
+                    $this->usuario->set("apellido", $_POST['apellido']);
+					$this->usuario->set("imagen", $nombre);
+					$this->usuario->edit();
+					header("Location: " . URL . "usuarios");
 				}
 			}
 		}
 
-		public function ver($id){
-			$this->producto->set("id",$id);
-			$datos = $this->producto->view();
+		public function ver($id_usuario){
+			$this->usuario->set("id_usuario",$id_usuario);
+			$datos = $this->usuario->view();
 			return $datos;
 		}
 
-		public function eliminar($id){
-			$this->producto->set("id",$id);
-			$this->producto->delete();
-			header("Location: " . URL . "productos");
+		public function eliminar($id_usuario){
+			$this->usuario->set("id_usuario",$id_usuario);
+			$this->usuario->delete();
+			header("Location: " . URL . "usuarios");
 		}
 }
-	$productos = new productosController();
+	$usuarios = new usuariosController();
 
 ?>
