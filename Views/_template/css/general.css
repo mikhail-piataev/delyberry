@@ -21,3 +21,35 @@ footer{
 	height: 50px;
 	width: 50px;
 }
+
+.navbar-custom {
+	background-color: #563d7c;
+	border-color: #4b2c6f;
+	color: #ffffff;
+}
+.navbar-custom .navbar-brand {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+.navbar-custom .navbar-brand:hover {
+	color: #d2b4ff;
+}
+.navbar-custom .nav > li > a {
+	color: #ffffff;
+	font-weight: 500;
+}
+.navbar-custom .nav > li > a:hover {
+	background-color: #4b2c6f;
+	color: #d2b4ff;
+}
+.navbar-custom .navbar-right > li > a {
+	background-color: #6f42c1;
+	color: #ffffff;
+	border-radius: 5px;
+	margin-right: 15px;
+}
+.navbar-custom .navbar-right > li > a:hover {
+	background-color: #5a34a6;
+	color: #ffffff;
+}
