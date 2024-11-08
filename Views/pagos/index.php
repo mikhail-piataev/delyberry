@@ -16,7 +16,7 @@
 		  <tbody>
 		  	<?php while($row = mysqli_fetch_array($datos)){ ?>
 		  	<tr>
-		  			<td><img class="imagen-avatar" src="<?php echo URL; ?>Views/_template/imagenes/pagos/<?php echo $row['imagen']; ?>"></td>
+		  			
 						<td><a href="<?php echo URL; ?>pagos/ver/<?php echo $row['id_pago']; ?>"><?php echo $row['monto']; ?></a></td>
 			    	<td><?php echo $row['metodo_pago']; ?></td>
 			    	<td><?php echo $row['estado']; ?></td>
