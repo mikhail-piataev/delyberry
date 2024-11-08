@@ -44,6 +44,13 @@
 		            <li><a href="<?php echo URL; ?>usuarios/agregar">Agregar usuario</a></li>
 		          </ul>
 		        </li>
+				<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pagos <span class="caret"></span></a>
+		          <ul class="dropdown-menu" role="menu">
+		            <li><a href="<?php echo URL; ?>pagos">Ver pagos</a></li>
+		            <li><a href="<?php echo URL; ?>pagos/agregar">Agregar pago</a></li>
+		          </ul>
+		        </li>
 		      </ul>
 		      
 		      <ul class="nav navbar-nav navbar-right">
