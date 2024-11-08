@@ -51,7 +51,7 @@
 		}
 
 		public function view(){
-			$sql = "SELECT * FROM productos WHERE id_pago = '{$this->id_pago}'";
+			$sql = "SELECT * FROM pagos WHERE id_pago = '{$this->id_pago}'";
 			$datos = $this->con->consultaRetorno($sql);
 			$row = mysqli_fetch_assoc($datos);
 			return $row;

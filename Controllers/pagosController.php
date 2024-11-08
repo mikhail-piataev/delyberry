@@ -25,7 +25,6 @@
 					$this->pago->set("monto", $_POST['monto']);
 					$this->pago->set("metodo_pago", $_POST['metodo_pago']);
 					$this->pago->set("estado", $_POST['estado']);
-					$this->pago->set("imagen", $monto);
 					$this->pago->add();
 					header("Location: " . URL . "pagos");
 		}
@@ -40,7 +39,7 @@
 					$this->pago->set("id_pago", $_POST['id_pago']);
 					$this->pago->set("metodo_pago", $_POST['metodo_pago']);
 					$this->pago->set("estado", $_POST['estado']);
-					$this->pago->set("imagen", $monto);
+					$this->pago->set("monto", $monto);
 					$this->pago->edit();
 					header("Location: " . URL . "pagos");
 			}
